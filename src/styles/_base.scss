@@ -48,6 +48,9 @@ a:hover {
   }
   .sub-menu {
     position: relative;
+    transition: all 0.2s ease;
+    max-height: 0;
+    overflow: hidden;
     .sub-menu {
       position: absolute;
       top: 0;
@@ -59,6 +62,12 @@ a:hover {
       a {
         color: $menu-bg;
       }
+    }
+  }
+  .open {
+    & > .sub-menu {
+      overflow: visible;
+      max-height: 300px;
     }
   }
 }
