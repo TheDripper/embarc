@@ -5,7 +5,8 @@ html {
   text-rendering: optimizeLegibility;
 }
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
@@ -14,10 +15,50 @@ body {
 }
 
 a {
-    color: #3897f0;
-    text-decoration: none
+  color: #3897f0;
+  text-decoration: none;
 }
 
 a:hover {
-    text-decoration: underline
+  text-decoration: underline;
+}
+#menu-main {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+
+  ul {
+    padding: 0;
+  }
+  li {
+    list-style: none;
+    height: 40px;
+    line-height: 40px;
+    background: $menu-bg;
+    cursor: pointer;
+    white-space: nowrap;
+    a {
+      padding: 0 10px;
+      color: white;
+      text-decoration: none;
+    }
+  }
+  & > li {
+    position: relative;
+  }
+  .sub-menu {
+    position: relative;
+    .sub-menu {
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translate(100%);
+    }
+    li {
+      background: $submenu-bg;
+      a {
+        color: $menu-bg;
+      }
+    }
+  }
 }

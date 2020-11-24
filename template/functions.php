@@ -62,7 +62,7 @@ add_action('after_setup_theme', function () {
     add_theme_support('html5', ['caption', 'comment-form', 'comment-list', 'gallery', 'search-form']);
     /**
      * Enable selective refresh for widgets in customizer
-     * @link https://developer.wordpress.org/themes/advanced-topics/customizer-api/#theme-support-in-sidebars
+     * @link https://developer.wordpress.org/themes/advanced-Project Categories/customizer-api/#theme-support-in-sidebars
      */
     // add_theme_support('customize-selective-refresh-widgets');
 
@@ -111,3 +111,57 @@ function add_slug_to_body_class($classes) {
     }
     return $classes;
 }
+
+function wporg_custom_post_type() {
+    register_post_type('project',
+        array(
+            'labels'      => array(
+                'name'          => __('Projects', 'textdomain'),
+                'singular_name' => __('Project', 'textdomain'),
+            ),
+                'public'      => true,
+                'has_archive' => true,
+                'show_in_rest' => true
+        )
+    );
+}
+add_action('init', 'wporg_custom_post_type');
+
+function register_taxonomies() {
+
+	$labels = array(
+		'name'                       => 'Project Categories',
+		'singular_name'              => 'Project Category',
+		'menu_name'                  => 'Project Categories',
+		'all_items'                  => 'All Items',
+		'parent_item'                => 'Parent Item',
+		'parent_item_colon'          => 'Parent Item:',
+		'new_item_name'              => 'New Item Name',
+		'add_new_item'               => 'Add New Item',
+		'edit_item'                  => 'Edit Item',
+		'update_item'                => 'Update Item',
+		'view_item'                  => 'View Item',
+		'separate_items_with_commas' => 'Separate items with commas',
+		'add_or_remove_items'        => 'Add or remove items',
+		'choose_from_most_used'      => 'Choose from the most used',
+		'popular_items'              => 'Popular Items',
+		'search_items'               => 'Search Items',
+		'not_found'                  => 'Not Found',
+		'no_terms'                   => 'No items',
+		'items_list'                 => 'Items list',
+		'items_list_navigation'      => 'Items list navigation',
+	);
+	$args = array(
+		'labels'                     => $labels,
+		'hierarchical'               => true,
+		'public'                     => true,
+		'show_ui'                    => true,
+		'show_admin_column'          => true,
+		'show_in_nav_menus'          => true,
+        'show_tagcloud'              => true,
+        'show_in_rest'               => true
+	);
+	register_taxonomy( 'project_categories', array( 'project' ), $args );
+
+}
+add_action( 'init', 'register_taxonomies', 0 );
