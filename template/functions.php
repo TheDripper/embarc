@@ -159,9 +159,15 @@ function register_taxonomies() {
 		'show_admin_column'          => true,
 		'show_in_nav_menus'          => true,
         'show_tagcloud'              => true,
-        'show_in_rest'               => true
+        'show_in_rest'               => true,
+        'has_archive'                => true,
+        'rewrite'                    => array('slug'=>'projects')
 	);
 	register_taxonomy( 'project_categories', array( 'project' ), $args );
 
 }
 add_action( 'init', 'register_taxonomies', 0 );
+function wpdocs_custom_excerpt_length( $length ) {
+    return 30;
+}
+add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
