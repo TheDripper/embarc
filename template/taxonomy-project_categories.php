@@ -18,8 +18,8 @@
 			<!-- article -->
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			<div class="date">
-			<h6>Location: Github</h6>
-			<h6>Updated: <?php echo get_the_date('m/d/Y'); ?></h6>
+			<h6>Location: <strong>Github</strong></h6>
+			<h6>Updated: <strong><?php echo get_the_date('m/d/Y'); ?></strong></h6>
 			</div>
 			<h1 style="background:<?php echo $color; ?>"><?php the_title(); ?></h1>
 			<div class="copy">
