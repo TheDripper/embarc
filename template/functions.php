@@ -172,3 +172,19 @@ function wpdocs_custom_excerpt_length( $length ) {
     return 30;
 }
 add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
+// add_filter( 'wp_nav_menu_items', 'add_extra_item_to_nav_menu', 10, 2 );
+// function add_extra_item_to_nav_menu( $items, $args ) {
+//     $cats = get_terms('project_categories');
+// 	$colors = [];
+// 	foreach($cats as $cat) {
+// 		$color = get_field('category_color',$cat);
+// 		$slug = $cat->slug; 
+// 		if(isset($color)) {
+//             echo '/projects/'.$slug.'/"';
+//             echo '<br />';
+//             str_replace('/projects/'.$slug.'/"','/projects/'.$slug.'/" data-color='.$color.'"',$items);
+// 		}
+//     }
+//     var_dump($items);
+//     return $items;
+// }

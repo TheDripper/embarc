@@ -73,6 +73,7 @@ main {
     background: $menu-bg;
     cursor: pointer;
     white-space: nowrap;
+
     a {
       padding: 0 10px;
       color: white;
@@ -89,8 +90,12 @@ main {
     max-height: 0;
     overflow: hidden;
     z-index: 3;
+
     li {
       background: $submenu-bg;
+      &:hover {
+        background: none !important;
+      }
       a {
         color: $menu-text;
       }

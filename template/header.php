@@ -10,6 +10,16 @@
 	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
 	<?php wp_head(); ?>
 </head>
-
-<body <?php body_class(); ?>>
+<?php 
+	$cats = get_terms('project_categories');
+	$colors = [];
+	foreach($cats as $cat) {
+		$color = get_field('category_color',$cat);
+		$slug = $cat->slug;
+		if(isset($color)) {
+			$colors[$slug] = $color; 
+		}
+	}
+?>
+<body <?php body_class(); ?> data-colors='<?php echo json_encode($colors); ?>'>
 	<?php wp_nav_menu('primary-navigation'); ?>
