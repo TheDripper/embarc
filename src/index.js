@@ -4,6 +4,7 @@ import './style.scss';
 import Router from './util/Router';
 import common from './routes/common';
 import home from './routes/home';
+import slider from './util/slider';
 
 /**
  * Populate Router instance with DOM routes
@@ -18,4 +19,7 @@ const routes = new Router({
 });
 
 /** Load Events */
-jQuery(document).ready(() => routes.loadEvents());
+jQuery(document).ready(() => {
+  slider();
+  routes.loadEvents()
+});

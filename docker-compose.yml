@@ -21,11 +21,14 @@ services:
   wordpress:
     depends_on:
       - db
-    image: wordpress
+    image: wordpress:latest
     volumes:
       - "./template:/var/www/html/wp-content/themes/presspack"
       - "./build:/var/www/html/wp-content/themes/presspack/build"
       - "./wp-content/plugins:/var/www/html/wp-content/plugins"
+      - "./wp-content:/var/www/html/wp-content"
+      # - "./wp-includes:/var/www/html/wp-includes"
+      # - "./wp-admin:/var/www/html/wp-admin"
       - "./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini"
     links:
       - db

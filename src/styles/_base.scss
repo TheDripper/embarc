@@ -7,6 +7,19 @@
   display: flex;
   justify-content: space-between;
 }
+@mixin full-960 {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 960px;
+}
+@mixin colors-submenu {
+  background: $submenu-bg;
+  color: $menu-bg;
+}
+@mixin colors-light {
+  background: #f5f5f5;
+  color: #666;
+}
 
 html {
   box-sizing: border-box;
@@ -42,12 +55,13 @@ a:hover {
   text-decoration: underline;
 }
 main {
-  background: #F5F5F5;
+  background: #f5f5f5;
 }
 #menu-main {
   display: flex;
   justify-content: space-between;
   list-style: none;
+  z-index: 3;
 
   ul {
     padding: 0;
@@ -67,22 +81,38 @@ main {
   }
   & > li {
     position: relative;
+    border-radius: 5px;
   }
   .sub-menu {
     position: relative;
     transition: all 0.2s ease;
     max-height: 0;
     overflow: hidden;
+    z-index: 3;
+    li {
+      background: $submenu-bg;
+      a {
+        color: $menu-text;
+      }
+    }
+    &.has-sub {
+      li {
+        background: #777777;
+        a {
+          color: white;
+        }
+      }
+    }
     .sub-menu {
       position: absolute;
       top: 0;
       right: 0;
       transform: translate(100%);
-    }
-    li {
-      background: $submenu-bg;
-      a {
-        color: $menu-bg;
+      li {
+        background: $submenu-bg;
+        a {
+          color: $menu-text;
+        }
       }
     }
   }
@@ -104,7 +134,7 @@ main {
     max-width: calc(33% - 30px);
     margin: 15px;
     border-radius: 20px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     height: 410px;
     background: white;
   }
@@ -131,5 +161,45 @@ main {
   }
   .copy {
     padding: 0 25px;
+  }
+}
+.slider-container {
+  @include full-960;
+  position: relative;
+  #prev {
+    position: absolute;
+    left: -60px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+  #next {
+    position: absolute;
+    right: -60px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+}
+.post-slider {
+  h2 {
+    height: 120px;
+    @include center;
+    @include colors-light;
+    text-align: center;
+    border-radius: 20px;
+    padding: 10px;
+    transition: all 0.2s ease;
+  }
+  .slick-slide {
+    margin: 0 12px;
+  }
+  .slick-current + .slick-active {
+    h2 {
+      background: #fdb71a;
+      color: white;
+      height: 160px;
+      margin-top: 0;
+    }
   }
 }
