@@ -49,7 +49,9 @@ add_action('after_setup_theme', function () {
      * @link https://developer.wordpress.org/reference/functions/register_nav_menus/
      */
     register_nav_menus([
-        'primary_navigation' => __('Primary Navigation', 'mini')
+        'primary-navigation' => __('Primary Navigation'),
+        'pages-foot' => __('Pages Footer'),
+        'categories-foot' => __('Categories Footer')
     ]);
     /**
      * Enable post thumbnails

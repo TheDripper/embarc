@@ -1,38 +1,38 @@
 <?php get_header(); ?>
 
-	<main role="main" aria-label="Content">
-		<!-- section -->
-		<section>
-			<h1><?php the_title(); ?></h1>
+<main role="main" aria-label="Content">
+	<!-- section -->
+	<section class="full-1140 end">
 
-		<?php if (have_posts()): while (have_posts()) : the_post(); ?>
+		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-			<!-- article -->
-			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-			
-				<?php the_content(); ?>
-				
+				<!-- article -->
+				<article id="post-<?php the_ID(); ?>" <?php post_class('max-800'); ?>>
+					<h1><?php the_title(); ?></h1>
 
-				<?php edit_post_link(); ?>
+					<?php the_content(); ?>
 
-			</article>
-			<!-- /article -->
 
-		<?php endwhile; ?>
+					<?php edit_post_link(); ?>
 
-		<?php else: ?>
+				</article>
+				<!-- /article -->
+
+			<?php endwhile; ?>
+
+		<?php else : ?>
 
 			<!-- article -->
 			<article>
 
-				<h2><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h2>
+				<h2><?php _e('Sorry, nothing to display.', 'html5blank'); ?></h2>
 
 			</article>
 			<!-- /article -->
 
 		<?php endif; ?>
 
-		</section>
-		<!-- /section -->
-	</main>
+	</section>
+	<!-- /section -->
+</main>
 <?php get_footer(); ?>

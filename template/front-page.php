@@ -1,4 +1,5 @@
 <?php get_header(); ?>
+<?php the_content(); ?>
 <div class="slider-container">
 <img src="<?php echo get_template_directory_uri(); ?>/build/images/prev.svg" id="prev" />
 <section class="post-slider">

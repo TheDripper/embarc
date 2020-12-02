@@ -25,6 +25,7 @@
 			<div class="copy">
 				<?php echo get_the_excerpt(); ?>
 			</div>
+			<a class="brick" href="<?php echo get_the_permalink(); ?>"></a>
 			</article>
 			<!-- /article -->
 

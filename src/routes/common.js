@@ -10,8 +10,14 @@ export default {
       $('#menu-main > li a').each(function(){
         if($(this).attr('href').includes(color)) {
           $(this).parent().find('.sub-menu').css('background',hex);
+          $(this).parent().css('borderBottom','5px solid '+hex);
         }
       });
+      // $('#menu-main-navigation > li a').each(function(){
+      //   if($(this).attr('href').includes(color)) {
+      //     $(this).parent().find('.sub-menu').css('background',hex);
+      //   }
+      // });
     }
     $('.sub-menu .sub-menu').parent().parent().addClass('has-sub');
     var cats = document.getElementsByClassName(
