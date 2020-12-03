@@ -59,6 +59,12 @@
 .p-30 {
   padding: 30px 0;
 }
+@mixin p-15 {
+  padding: 15px 0;
+}
+.p-15 {
+  padding: 15px 0;
+}
 @mixin colors-submenu {
   background: $submenu-bg;
   color: $menu-bg;
@@ -87,7 +93,7 @@ body {
 
 body {
   font-family: "Lato";
-  border-top: 10px solid #D7C2EA;
+  border-top: 10px solid #d7c2ea;
 }
 
 a {
@@ -119,12 +125,11 @@ a:hover {
   text-decoration: underline;
 }
 main {
-  background: #f5f5f5;
+  padding-bottom: 100px;
 }
-.single-project {
+.tax-project_categories {
   main {
-    background: white;
-    padding-bottom: 100px;
+    background: #f5f5f5;
   }
 }
 #menu-main,
@@ -289,16 +294,17 @@ main {
   & > div {
     @include between;
   }
-  a, li {
+  a,
+  li {
     color: white;
   }
   ul {
     list-style: none;
   }
   p {
-    color: #BBBBBB;
+    color: #bbbbbb;
   }
-  border-bottom: 10px solid #D7C2EA;
+  border-bottom: 10px solid #d7c2ea;
 }
 .brick {
   position: absolute;
@@ -311,4 +317,64 @@ main {
   img {
     height: auto !important;
   }
+}
+.cat-drop {
+  height: 75px;
+  background: white;
+  border-radius: 10px;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  padding: 10px;
+  padding-left: 30px;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 15px;
+  h3 {
+    font-weight: bold;
+  }
+  img {
+    margin-right: 15px;
+  }
+}
+.color-bar {
+  height: 100%;
+  position: absolute;
+  width: 20px;
+  left: 0;
+  top: 0;
+  z-index: 2;
+}
+.drop {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  &.open {
+    max-height: 900px;
+  }
+}
+.logo-wrap {
+  a {
+    display: flex;
+    align-items: center;
+  }
+}
+.featherlight-content {
+  background: $modal-bg;
+  border-radius: 20px;
+}
+.modal {
+  display: none;
+  &.featherlight-inner {
+    display: flex;
+
+    img {
+      margin: 30px;
+    }
+  }
+}
+.featherlight-close {
+  font-size: 20px;
+  top: 30px !important;
+  right: 30px !important; 
 }

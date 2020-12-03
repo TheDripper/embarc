@@ -12,7 +12,7 @@
 	<?php wp_head(); ?>
 </head>
 <?php 
-	$cats = get_terms('project_categories');
+	$cats = get_terms('project_categories',array('hide_empty'=>false));
 	$colors = [];
 	foreach($cats as $cat) {
 		$color = get_field('category_color',$cat);
@@ -23,8 +23,8 @@
 	}
 ?>
 <body <?php body_class(); ?> data-colors='<?php echo json_encode($colors); ?>'>
-<div class="logo-wrap between full-1140 p-30">
-	<img src="<?php echo get_template_directory_uri()."/build/images/embarc-logo.png"?>"
+<div class="logo-wrap between full-1140 p-15">
+	<a href="/"><img src="<?php echo get_template_directory_uri()."/build/images/embarc-logo.png"?>" /></a>
 	<h6>Your ARC-based open source project directory | currently tracking:  27 github projects</h6>
 </div>
 <div class="full-1400">

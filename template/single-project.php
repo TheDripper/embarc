@@ -2,12 +2,12 @@
 
 <main role="main" aria-label="Content">
 	<!-- section -->
-	<section class="full-1140 end">
+	<section class="full-1140">
 
 		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 				<!-- article -->
-				<article id="post-<?php the_ID(); ?>" <?php post_class('max-800'); ?>>
+				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					<h1><?php the_title(); ?></h1>
 
 					<?php the_content(); ?>

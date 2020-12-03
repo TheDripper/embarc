@@ -13,9 +13,16 @@ global $post;
 $q = new WP_Query($args);
 while($q->have_posts()): $q->the_post();
 ?>
-<article class="post-slide">
+<article class="post-slide feather">
 <h2><?php the_title(); ?></h2>
 <p><strong><?php echo get_the_date(); ?></strong><?php the_excerpt(); ?></p>
+<div class="modal">
+    <?php the_post_thumbnail(); ?>
+    <div class="wrap">
+        <h2><?php the_title(); ?></h2>
+        <?php the_content(); ?>
+    </div>
+</div>
 </article>
 <?php endwhile; ?>
 </section>

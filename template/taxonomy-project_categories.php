@@ -1,5 +1,6 @@
 <?php 
 		$term = get_queried_object();
+		$children = get_term_children($term->term_id,'project_categories');
 		$color = get_field('category_color', $term);
 		if(empty($color)) {
 			$term = get_term($term->parent);
@@ -7,8 +8,13 @@
 		} 
 ?>
 <?php get_header(); ?>
+<main role="main" aria-label="Content">
+<?php
+		if(!empty($children)):
+			get_template_part('content','top');
+		else:
+?>
 
-	<main role="main" aria-label="Content">
 		<!-- section -->
 		<section class="cards">
 
@@ -45,5 +51,6 @@
 
 		</section>
 		<!-- /section -->
+	<?php endif; ?>
 	</main>
 <?php get_footer(); ?>
