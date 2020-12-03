@@ -13,7 +13,7 @@ export default {
     let colors = JSON.parse($("body").attr("data-colors"));
     for (let color in colors) {
       let hex = colors[color];
-      $("#menu-main > li > a").each(function () {
+      $("#menu-main-navigation > li > a").each(function () {
         if ($(this).attr("href").includes(color)) {
           $(this).parent().find(".sub-menu").css("background", hex);
           $(this)

@@ -7,7 +7,7 @@
     <?php foreach ($children as $child) : ?>
         <?php $term = get_term($child); ?>
         <?php $mage = get_field('image', $term); ?>
-        <div class="cat-drop">
+        <div id="<?php echo $term->slug; ?>"class="cat-drop">
             <div class="color-bar" style="background:<?php echo $color; ?>;"></div>
             <div class="grey-bar" style="background:#666666;"></div>
             <img src="<?php echo $mage; ?>" />
