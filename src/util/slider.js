@@ -6,8 +6,17 @@ export default () => {
     arrows: true,
     autoplay: true,
     autoplaySpeed: 5000,
-    slidesToShow: 3,
     prevArrow: '#prev',
-    nextArrow: '#next'
+    nextArrow: '#next',
+    slidesToShow: 3,
+    responsive: [
+      {
+        breakpoint: 800,
+        settings: {
+          slidesToShow: 1,
+          arrows: false
+        }
+      }
+    ]
   });
 };

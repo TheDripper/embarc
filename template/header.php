@@ -27,6 +27,6 @@
 	<a href="/"><img src="<?php echo get_template_directory_uri()."/build/images/embarc-logo.png"?>" /></a>
 	<h6>Your ARC-based open source project directory | currently tracking:  27 github projects</h6>
 </div>
-<div class="full-1400">
+<div class="full-1140">
 	<?php wp_nav_menu(array('theme_location'=>'primary-navigation')); ?>
 </div>
