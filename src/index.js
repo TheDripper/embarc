@@ -6,7 +6,7 @@ import common from './routes/common';
 import home from './routes/home';
 import slider from './util/slider';
 import featherlight from './util/featherlight';
-
+const masonry = require("masonry-layout");
 /**
  * Populate Router instance with DOM routes
  * @type {Router} routes - An instance of our router
@@ -23,5 +23,6 @@ const routes = new Router({
 jQuery(document).ready(() => {
   slider();
   featherlight();
+  masonry;
   routes.loadEvents()
 });
