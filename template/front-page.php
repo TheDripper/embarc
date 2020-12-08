@@ -14,7 +14,7 @@ $q = new WP_Query($args);
 while($q->have_posts()): $q->the_post();
 ?>
 <article class="post-slide feather">
-<h2><?php the_title(); ?></h2>
+<h2><?php substr(0,20,the_title())."..."; ?></h2>
 <p><strong><?php echo get_the_date(); ?></strong><?php the_excerpt(); ?></p>
 <div class="modal">
     <?php the_post_thumbnail(); ?>

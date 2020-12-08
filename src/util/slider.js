@@ -5,7 +5,7 @@ export default () => {
     dots: false,
     arrows: true,
     autoplay: true,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 8000,
     prevArrow: '#prev',
     nextArrow: '#next',
     slidesToShow: 3,
