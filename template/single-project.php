@@ -8,10 +8,33 @@
 
 				<!-- article -->
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-					<h1><?php the_title(); ?></h1>
 
 					<?php the_content(); ?>
+					<h1>TEST</h1>
+					<div class="buttons">
+						<?php $id = get_the_ID(); ?>
+						<div class="button-wrap">
+							<?php if (get_field('download')) : ?>
+								<a target="_blank" href="<?php the_field('download'); ?>">Download</a>
+							<?php endif; ?>
+						</div>
+						<div class="button-wrap">
+							<?php if (get_field('repository')) : ?>
+								<a href="<?php the_field('repository'); ?>">Repository</a>
+							<?php endif; ?>
+						</div>
+						<div class="button-wrap">
+							<?php if (get_field('support')) : ?>
+								<a target="_blank" href="<?php the_field('support'); ?>">Support</a>
+							<?php endif; ?>
+						</div>
+						<div class="button-wrap">
 
+							<?php if (get_field('docs')) : ?>
+								<a target="_blank" href="<?php the_field('docs'); ?>">Docs</a>
+							<?php endif; ?>
+						</div>
+					</div>
 
 					<?php edit_post_link(); ?>
 

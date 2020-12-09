@@ -7,6 +7,12 @@
 			$color = get_field('category_color', $term);
 		} 
 ?>
+<?php 
+	if($term->slug=='resources') {
+		wp_redirect('/resources',301);
+		exit();
+	}
+?>
 <?php get_header(); ?>
 <main role="main" aria-label="Content">
 <?php

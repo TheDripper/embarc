@@ -13,12 +13,17 @@ export default {
     let colors = JSON.parse($("body").attr("data-colors"));
     for (let color in colors) {
       let hex = colors[color];
-      $("#menu-main-navigation > li > a").each(function () {
+      $("#menu-main > li > a").each(function () {
         if ($(this).attr("href").includes(color)) {
           $(this).parent().find(".sub-menu").css("background", hex);
           $(this)
             .parent()
             .css("borderBottom", "5px solid " + hex);
+        }
+        let target = window.location.href.split('/').reverse()[1]
+        if($('.tax-project_categories').length && $(this).attr('href').includes(target)) {
+          $(this).parent().css('background',colors[target]);
+          $(this).parent().css('borderBottom',"5px solid #777777");
         }
       });
       // $('#menu-main-navigation > li a').each(function(){
@@ -27,6 +32,7 @@ export default {
       //   }
       // });
     }
+    
     $(".sub-menu .sub-menu").parent().parent().addClass("has-sub");
     var cats = document.getElementsByClassName(
       "menu-item-object-project_categories"
