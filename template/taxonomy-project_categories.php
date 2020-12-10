@@ -64,6 +64,7 @@
                     </div>
 			<div class="modal">
 			<?php the_content(); ?>
+			<a href="<?php the_permalink(); ?>">Link this project</a>
 			</div>
 			</article>
 			<!-- /article -->
