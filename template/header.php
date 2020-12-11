@@ -24,8 +24,8 @@
 ?>
 <body <?php body_class(); ?> data-colors='<?php echo json_encode($colors); ?>'>
 <div class="logo-wrap between full-1140 p-15">
-	<a href="/"><img src="<?php echo get_template_directory_uri()."/build/images/embarc-logo.png"?>" /></a>
-	<h6>Your ARC-based open source project directory | currently tracking:  27 github projects</h6>
+	<a class="logo" href="/"><img src="<?php echo get_template_directory_uri()."/build/images/embarc-logo.png"?>" /></a>
+	<h6>Your ARC-based open source project directory | currently tracking:  <span class="strong"><a href="/projects/community-projects/" class="lime">27</a>github projects</span></h6>
 </div>
 <div class="full-1140">
 	<?php wp_nav_menu(array('theme_location'=>'primary-navigation')); ?>

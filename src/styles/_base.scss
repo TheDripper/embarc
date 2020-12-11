@@ -45,6 +45,15 @@
     width: calc(100% - 40px);
   }
 }
+.full-960-gutter {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 960px;
+  @media (max-width: 980px) {
+    padding: 0 30px;
+    width: calc(100% - 60px);
+  }
+}
 @mixin full-1140 {
   width: 100%;
   margin: 0 auto;
@@ -114,13 +123,13 @@ body {
   margin: 0;
   padding: 0;
   position: relative;
-  min-height: calc(100vh - 220px);
+  min-height: 100vh;
 }
 
 body {
   font-family: "Lato";
   border-top: 10px solid #d7c2ea;
-  padding-bottom: 178px;
+  padding-bottom: 327px;
 }
 
 a {
@@ -134,7 +143,7 @@ h2 {
   font-size: 30px;
   font-weight: 500;
   @media (max-width: 800px) {
-    font-size: 15px;
+    font-size: 26px;
   }
 }
 h3 {
@@ -247,6 +256,12 @@ ul {
     @media (min-width: 1000px) {
       margin: 0 10px;
       width: 18%;
+      &:first-child {
+        margin-left: 0;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
     }
   }
   .sub-menu {
@@ -517,9 +532,9 @@ ul {
 .drop {
   max-height: 0;
   overflow: hidden;
-  transition: all 0.7s ease;
+  transition: all 1s ease;
   &.open {
-    max-height: 2000px;
+    max-height: 4000px;
   }
 }
 .logo-wrap {
@@ -529,7 +544,7 @@ ul {
     padding-bottom: 0;
     padding-top: 30px;
   }
-  a {
+  .logo {
     display: flex;
     align-items: center;
   }
@@ -559,4 +574,13 @@ ul {
 }
 #resources-community-projects.cat-drop {
   display: none;
+}
+.text-center {
+  text-align: center;
+}
+.lime {
+  color: #90BF3E;
+  text-decoration: underline;
+  font-weight: bold;
+  margin-right: 5px;
 }

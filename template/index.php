@@ -62,6 +62,7 @@
     <?php endif; ?>
 
   </section>
+  <div class="wp-block-spacer" style="height:100px;"></div>
   <!-- /section -->
 </main>
 <?php get_footer(); ?>
