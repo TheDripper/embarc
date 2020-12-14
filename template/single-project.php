@@ -2,6 +2,7 @@
 
 <main role="main" aria-label="Content">
 	<!-- section -->
+	<div class="wp-block-spacer" style="height: 70px;"></div>
 	<section class="full-1140">
 
 		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
