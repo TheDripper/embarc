@@ -17,10 +17,11 @@ while($q->have_posts()): $q->the_post();
 <h2><?php substr(0,20,the_title())."..."; ?></h2>
 <p><strong><?php echo get_the_date(); ?></strong><?php the_excerpt(); ?></p>
 <div class="modal">
-    <?php the_post_thumbnail(); ?>
     <div class="wrap">
-        <h2><?php the_title(); ?></h2>
-        <?php the_content(); ?>
+        <?php echo get_the_content(); ?>
+        <div class="end">
+            <a href="<?php the_permalink(); ?>">Link this article</a>
+        </div>
     </div>
 </div>
 </article>

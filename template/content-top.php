@@ -3,15 +3,25 @@
     $term = get_queried_object();
     $color = get_field('category_color', $term);
     $children = get_term_children($term->term_id, 'project_categories');
+    $title = $term->name;
     ?>
+    <div class="wp-block-spacer" style="height:70px;"></div>
+    <h1 class="text-center"><?php echo $title; ?></h1>
+    <div class="wp-block-spacer" style="height:30px;"></div>
     <?php foreach ($children as $child) : ?>
         <?php $term = get_term($child); ?>
         <?php $mage = get_field('image', $term); ?>
-        <div id="<?php echo $term->slug; ?>"class="cat-drop">
+        <div id="<?php echo $term->slug; ?>" class="cat-drop">
             <div class="color-bar" style="background:<?php echo $color; ?>;"></div>
             <div class="grey-bar" style="background:#666666;"></div>
-            <img src="<?php echo $mage; ?>" />
-            <h3><?php echo $term->name; ?></h3>
+            <div class="title-wrap">
+                <img src="<?php echo $mage; ?>" />
+                <h3><?php echo $term->name; ?></h3>
+            </div>
+            <div class="date-wrap">
+                <p>Updated: <?php echo get_the_date(); ?></p>
+                <img src="/wp-content/themes/template/build/images/cat-right.svg" class="cat-right" />
+            </div>
         </div>
         <section class="cards drop">
             <?php
@@ -63,10 +73,14 @@
                         </div>
                     </div>
                     <div class="modal">
-                        <?php the_content(); ?>
+                        <?php echo get_the_content(); ?>
+                        <div class="end">
+                            <a href="<?php the_permalink(); ?>">Link this project</a>
+                        </div>
                     </div>
                 </article>
             <?php endwhile; ?>
         </section>
     <?php endforeach; ?>
 </div>
+<div class="wp-block-spacer" style="height:100px;"></div>

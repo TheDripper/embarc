@@ -129,7 +129,7 @@ body {
 body {
   font-family: "Lato";
   border-top: 10px solid #d7c2ea;
-  padding-bottom: 327px;
+  padding-bottom: 157px;
 }
 
 a {
@@ -204,6 +204,7 @@ ul {
     }
   }
 }
+
 #menu-main,
 #menu-main-navigation {
   display: flex;
@@ -244,6 +245,14 @@ ul {
   & > li {
     position: relative;
     border-radius: 5px;
+    &:after {
+      content: url("/wp-content/themes/template/build/images/down.svg");
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: block;
+    }
     @media (max-width: 999px) {
       margin: 0;
       margin-bottom: 10px;
@@ -287,8 +296,17 @@ ul {
       }
     }
     &.has-sub {
+      & > li:after {
+        content: url("/wp-content/themes/template/build/images/right.svg");
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        display: block;
+      }
       li {
         background: #777777;
+
         a {
           color: white;
         }
@@ -334,6 +352,14 @@ ul {
     background: #666666;
     color: white;
     @include center;
+    position: relative;
+    &:after {
+      content: url("/wp-content/themes/template/build/images/upright.svg");
+      position: absolute;
+      right: 5px;
+      top: 0;
+      display: block;
+    }
   }
 }
 .cards {
@@ -362,6 +388,12 @@ ul {
     background: white;
     position: relative;
     padding-bottom: 40px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
+    }
   }
   h1 {
     color: white;
@@ -429,6 +461,11 @@ ul {
     overflow: visible;
   }
   #prev {
+    @media (max-width: 1060px) {
+      bottom: 70px;
+      left: 20px;
+      top: auto;
+    }
     position: absolute;
     left: -60px;
     top: 50%;
@@ -436,6 +473,11 @@ ul {
     cursor: pointer;
   }
   #next {
+    @media (max-width: 1060px) {
+      bottom: 70px;
+      right: 20px;
+      top: auto;
+    }
     position: absolute;
     right: -60px;
     top: 50%;
@@ -481,6 +523,10 @@ ul {
     color: white;
     font-weight: 400;
     font-size: 16px;
+    &:hover {
+      color: #d7c2ea;
+      text-decoration: none;
+    }
     &:before {
       display: none;
     }
@@ -518,6 +564,24 @@ ul {
   overflow: hidden;
   margin-bottom: 15px;
   cursor: pointer;
+  justify-content: space-between;
+  &:hover {
+    .date-wrap img {
+      transform: translate(10px);
+    }
+  }
+  .title-wrap,
+  .date-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .date-wrap {
+    img {
+      transition: all 0.3s ease;
+      margin-left: 25px;
+    }
+  }
   h3 {
     font-weight: bold;
   }
@@ -577,16 +641,51 @@ ul {
 .featherlight-content {
   background: $modal-bg;
   border-radius: 20px;
+  padding: 50px !important;
+  max-width: 1000px !important;
 }
 .modal {
   display: none;
-  &.featherlight-inner {
+}
+.featherlight-content {
+  background: $modal-bg;
+  border-radius: 20px;
+  padding: 50px !important;
+  max-width: 1000px !important;
+  .modal {
+    display: block !important;
   }
+  .no-modal {
+    display: none !important;
+  }
+}
+.board-diagram {
+  background: white;
+  border-radius: 20px;
+  margin: 50px;
+  padding: 40px;
+  .feather {
+    padding: 30px;
+    margin: 0 auto;
+    text-align: center;
+    cursor: pointer;
+  }
+}
+.development-card {
+  background: #f5f5f5;
 }
 .featherlight-close {
   font-size: 20px;
   top: 20px !important;
   right: 20px !important;
+}
+.development-systems {
+  background: #f5f5f5;
+  padding-bottom: 100px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  .buttons {
+    padding: 0 !important;
+  }
 }
 .sharedaddy {
   display: none;
@@ -607,4 +706,14 @@ article {
   h1:first-child {
     margin-top: 0;
   }
+}
+.underline {
+  a {
+    text-decoration: underline;
+  }
+}
+.end {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }

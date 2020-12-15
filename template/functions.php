@@ -124,7 +124,8 @@ function wporg_custom_post_type() {
             ),
                 'public'      => true,
                 'has_archive' => true,
-                'show_in_rest' => true
+                'show_in_rest' => true,
+                'supports'=>array('thumbnail','title','editor')
         )
     );
 }
