@@ -1,8 +1,8 @@
 <?php 
-        $term = get_queried_object();
-        $title = $term->name;
+		$term = get_queried_object();
 		$children = get_term_children($term->term_id,'project_categories');
-		$color = get_field('category_color', $term);
+        $color = get_field('category_color', $term);
+        $title = $term->name;
 		if(empty($color)) {
 			$term = get_term($term->parent);
 			$color = get_field('category_color', $term);
@@ -23,8 +23,9 @@
 ?>
 
 		<!-- section -->
-        <div class="wp-block-spacer" style="height: 50px;"></div>
-    <h1 class="center text-center"><?php echo $title; ?></h1>
+        <div class="wp-block-spacer" style="height:70px;"></div>
+        <h1 class="full-1140 text-center"><?php echo $title; ?></h1>
+        <div class="wp-block-spacer" style="height:30px;"></div>
 		<section class="cards">
 
 			
@@ -66,8 +67,8 @@
                         </div>
                     </div>
 			<div class="modal">
-			<?php echo get_the_content(); ?>
-            <a href="<?php the_permalink(); ?>">Link this project</a>
+			<?php the_content(); ?>
+			<a href="<?php the_permalink(); ?>">Link this project</a>
 			</div>
 			</article>
 			<!-- /article -->
@@ -89,6 +90,5 @@
 		</section>
 		<!-- /section -->
 	<?php endif; ?>
-    <div class="wp-block-spacer" style="height:100px;"></div>
 	</main>
 <?php get_footer(); ?>

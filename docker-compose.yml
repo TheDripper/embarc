@@ -23,8 +23,9 @@ services:
       - db
     image: wordpress:latest
     volumes:
-      - "./template:/var/www/html/wp-content/themes/presspack"
-      - "./build:/var/www/html/wp-content/themes/presspack/build"
+      - "./template:/var/www/html/wp-content/themes/template"
+      - "./build:/var/www/html/wp-content/themes/template/build"
+      - "./build/images:/var/www/html/wp-content/themes/template/build/images"
       - "./wp-content/plugins:/var/www/html/wp-content/plugins"
       - "./wp-content:/var/www/html/wp-content"
       # - "./wp-includes:/var/www/html/wp-includes"

@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-    <div class="wp-block-spacer" style="height:70px;"></div>
+
 	<main role="main" aria-label="Content">
 		<!-- section -->
 		<section>

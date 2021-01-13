@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-    <div class="wp-block-spacer" style="height:70px;"></div>
+
 	<main role="main" aria-label="Content">
 		<!-- section -->
 		<section>
@@ -9,7 +9,7 @@
 			<!-- article -->
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			
-				<?php the_content(); ?>
+				<?php the_title(); ?>
 				
 
 				<?php edit_post_link(); ?>

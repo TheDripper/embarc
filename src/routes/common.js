@@ -4,14 +4,26 @@ import hoverintent from "hoverintent/dist/hoverintent.min";
 export default {
   init() {
     // JavaScript to be fired on all pages
+    if ($(".active").length) {
+      $(".active").on('click',function(){
+        $(this).removeClass('active');
+      });
+      $("html, body").animate(
+        {
+          scrollTop: $(".active").offset().top - 200,
+        },
+        500
+      );
+    }
     if ($(".term-development-systems").length) {
       $(".system").click(function (e) {
-        window.location.replace($(this).attr('data-url'));
+        window.location.replace($(this).attr("data-url"));
       });
     }
     if ($(".cat-drop").length) {
       $(".cat-drop").on("click", function (e) {
         $(this).find(".grey-bar").toggleClass("open");
+        $(this).toggleClass("open");
         $(this).next().toggleClass("open");
       });
     }
@@ -94,6 +106,15 @@ export default {
           }
         );
       }
+    } else {
+      $("#menu-main-navigation > li").each(function () {
+        $(this).on("click", function (e) {
+          if(!$(this).hasClass('open')) {
+            e.preventDefault();
+            $(this).addClass("open");
+          } 
+        });
+      });
     }
   },
   finalize() {
