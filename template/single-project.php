@@ -85,6 +85,7 @@
 
 
                                     <?php the_content(); ?>
+<<<<<<< HEAD
                                     <?php $id = get_the_ID(); ?>
                                     <div class="buttons buttons-single">
                                         <?php $id = get_the_ID(); ?>
@@ -132,6 +133,60 @@
 
 
                                 <?php edit_post_link(); ?>
+=======
+                                    <div class="wp-block-columns">
+                                        <div class="wp-block-column" style="flex-basis:33%;">
+                                        </div>
+                                        <div class="wp-block-column" style="flex-basis:66%;">
+                                            <?php $id = get_the_ID(); ?>
+                                            <div class="buttons">
+                                                <?php $id = get_the_ID(); ?>
+                                                <div class="button-wrap">
+                                                    <?php if (get_field('download')) : ?>
+                                                        <?php
+                                                        $download = 'Download Latest Release';
+                                                        if (get_field('download_text_override')) {
+                                                            $download = get_field('download_text_override');
+                                                        }
+                                                        ?>
+                                                        <a target="_blank" href="<?php the_field('download'); ?>"><?php echo $download; ?></a> <?php endif; ?>
+                                                </div>
+                                                <div class="button-wrap">
+                                                    <?php if (get_field('repository')) : ?>
+                                                        <?php
+                                                        $repository = 'Source Repository';
+                                                        if (get_field('repository_text_override')) {
+                                                            $repository = get_field('repository_text_override');
+                                                        }
+                                                        ?>
+                                                        <a href="<?php the_field('repository'); ?>"><?php echo $repository; ?></a> <?php endif; ?>
+                                                </div>
+                                                <div class="button-wrap">
+
+                                                    <?php if (get_field('support')) : ?>
+                                                        <?php
+                                                        $support = 'Support';
+                                                        if (get_field('support_text_override')) {
+                                                            $support = get_field('support_text_override');
+                                                        }
+                                                        ?>
+                                                        <a target="_blank" href="<?php the_field('support'); ?>"><?php echo $support; ?></a>
+                                                    <?php endif; ?>
+                                                </div>
+                                                <div class="button-wrap">
+
+                                                    <?php if (get_field('docs')) : ?>
+                                                        <a target="_blank" href="<?php the_field('docs'); ?>">Documentation</a>
+                                                    <?php endif; ?>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <?php endif; ?>
+
+
+
+                                    <?php edit_post_link(); ?>
+>>>>>>> f53dc3a65120e4a87080ff7fb8d873878c8adccb
 
                             </article>
                             <!-- /article -->
